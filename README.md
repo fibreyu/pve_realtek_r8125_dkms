@@ -20,7 +20,11 @@ download deb file and run
 dpkg -i pve-realtek-r8125-dkms*.deb
 ```
 
+or
 
+```bash
+wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/blob/main/auto_install.sh | bash 
+```
 
 #### 2. use autorun.sh provided by realtek
 
