@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+#  dh command outputs which dh_* commands it is executing
+DH_VERBOSE = 1
+# each dh_* command outputs which commands it is executing
+DH_OPTIONS=-v
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# get version from changelog
+DRV_NAME := r8125
+VERSION := $(shell dpkg-parsechangelog -S Version | awk -F "-" '{print $$1}')
+
+
+%:
+	dh $@
+
+
+override_dh_auto_configure:
+	sed -i 's/R8125B-VERSION/$(VERSION)/g' debian/postinst
+	chmod a+x debian/preinst
+	chmod a+x debian/postinst
+	chmod a+x debian/prerm
+	chmod a+x debian/postrm
+
+
+override_dh_install:
+	dh_install driver/* usr/src/$(DRV_NAME)-$(VERSION)
+	dh_install dkms.conf usr/src/$(DRV_NAME)-$(VERSION)
+
+
+# Nothing to configure, build or auto-install
+override_dh_auto_build:
+override_dh_auto_test:
+override_dh_auto_install:
+override_dh_auto_clean:

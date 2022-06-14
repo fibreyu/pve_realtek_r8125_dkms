@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+
+# =========================  add signature  =================================
+# =========================  fix bug SSL error:02001002:system library ======
+# =========================  fix bug SSL error:2006D080:BIO routines  =======
+cert_path="/lib/modules/$(uname -r)/build/certs/"
+
+tee "${cert_path}x509.genkey" > /dev/null << 'EOF'
+[ req ]
+default_bits = 4096
+distinguished_name = req_distinguished_name
+prompt = no
+string_mask = utf8only
+x509_extensions = myexts
+[ req_distinguished_name ]
+CN = Modules
+[ myexts ]
+basicConstraints=critical,CA:FALSE
+keyUsage=digitalSignature
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+EOF
+openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config "${cert_path}x509.genkey" -outform DER -out "${cert_path}signing_key.x509" -keyout "${cert_path}signing_key.pem"
+
+
+# =========================== fix bug missing 'System.map' file =======================================
+for i in /boot/System.map*
+do
+  # echo ${i#*map-}
+  ln -sf $i "/lib/modules/${i#*map-}/build/System.map"
+done
+
+# ===========================  remove old version =====================================================
+DRV_NAME=$(dkms status *r8125* | awk -F ', ' 'NR==1 {print $1}')
+DRV_VERSION=$(dkms status *r8125* | awk -F ', ' 'NR==1 {print $2}'| awk -F ': ' 'NR==1 {print $1}')
+
+if [[ ${DRV_NAME} != "" ]]; then
+  dkms remove -m  ${DRV_NAME} -v ${DRV_VERSION} --all
+  rm -rf /usr/src/${DRV_NAME}-${DRV_VERSION}
+fi

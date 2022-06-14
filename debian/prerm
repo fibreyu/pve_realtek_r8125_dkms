@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+
+DRV_NAME=$(dkms status *r8125* | awk -F ', ' 'NR==1 {print $1}')
+DRV_VERSION=$(dkms status *r8125* | awk -F ', ' 'NR==1 {print $2}'| awk -F ': ' 'NR==1 {print $1}')
+
+if [[ ${DRV_NAME} != "" ]]; then
+  dkms remove -m  ${DRV_NAME} -v ${DRV_VERSION} --all
+  rm -rf /usr/src/${DRV_NAME}-${DRV_VERSION}
+fi
