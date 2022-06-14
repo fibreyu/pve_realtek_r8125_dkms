@@ -23,7 +23,7 @@ dpkg -i pve-realtek-r8125-dkms*.deb
 or
 
 ```bash
-wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/blob/main/auto_install.sh | bash 
+wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/blob/main/auto_install.sh -O auto_install.sh && chmod +x auto_install.sh && bash auto_install.sh
 ```
 
 #### 2. use autorun.sh provided by realtek
