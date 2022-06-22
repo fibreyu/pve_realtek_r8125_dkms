@@ -11,8 +11,10 @@ dkms build -m ${DRV_NAME} -v ${DRV_VERSION}
 dkms install -m ${DRV_NAME} -v ${DRV_VERSION}
 RESULT=$?
 
-sed  -i 's/blacklist r8169//g' /etc/modprobe.d/pve-blacklist.conf
+
 echo "blacklist r8169" >> /etc/modprobe.d/pve-blacklist.conf
+echo "r8125" >> /etc/modules
+modprobe r8125
 
 echo "Finished running dkms install steps."
 

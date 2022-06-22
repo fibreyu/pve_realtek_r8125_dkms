@@ -17,13 +17,16 @@ There are 3 ways to install Realtek r8125 driver for ProxmoxVE.
 download deb file and run 
 
 ```bash
-dpkg -i pve-realtek-r8125-dkms*.deb
+wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/raw/main/auto_install.sh -O auto_install.sh && chmod +x auto_install.sh && bash auto_install.sh
 ```
 
 or
 
 ```bash
-wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/raw/main/auto_install.sh -O auto_install.sh && chmod +x auto_install.sh && bash auto_install.sh
+apt update -y
+apt install -y dkms
+apt install -y pve-headers-$(uname -r)
+dpkg -i pve-realtek-r8125-dkms*.deb
 ```
 
 #### 2. use autorun.sh provided by realtek
