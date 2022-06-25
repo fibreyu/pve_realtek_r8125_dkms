@@ -23,6 +23,10 @@ override_dh_auto_configure:
 	chmod a+x debian/postinst
 	chmod a+x debian/prerm
 	chmod a+x debian/postrm
+	sed -i 's/ENABLE_MULTIPLE_TX_QUEUE = n/ENABLE_MULTIPLE_TX_QUEUE = y/g' driver/src/Makefile
+	sed -i 's/ENABLE_RSS_SUPPORT = n/ENABLE_RSS_SUPPORT = y/g' driver/src/Makefile
+	sed -i 's/CONFIG_ASPM = y/CONFIG_ASPM = n/g' driver/src/Makefile
+
 
 
 override_dh_install:
