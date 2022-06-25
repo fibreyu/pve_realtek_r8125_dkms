@@ -8,7 +8,7 @@ wget https://gitee.com/fibreyu/pve_realtek_r8125_dkms/attach_files/1107282/downl
 
 chmod 777 driver.deb
 
-# apt install -f ./driver.deb
-dpkg -i driver.deb
+apt install -f ./driver.deb
+# dpkg -i driver.deb
 
 rm -rf driver.deb
