@@ -10,3 +10,5 @@ apt install -f /tmp/driver.deb -y
 # dpkg -i driver.deb
 
 rm -rf /tmp/driver.deb
+
+echo "reboot to apply new driver!"
