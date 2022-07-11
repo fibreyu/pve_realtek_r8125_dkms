@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 11 Jul 2022 11:25:41 +0800
+Source: pve-realtek-r8125-dkms
+Binary: pve-realtek-r8125-dkms
+Architecture: amd64
+Version: 9.009.02-1
+Distribution: unstable
+Urgency: medium
+Maintainer: fibreyu <fibreyu@gmail.com>
+Changed-By: fibreyu <fibreyu@gmail.com>
+Description:
+ pve-realtek-r8125-dkms - Realtek r8125b driver for ProxmoxVE
+Changes:
+ pve-realtek-r8125-dkms (9.009.02-1) unstable; urgency=medium
+ .
+   * add Realtek r8125b driver version 9.009.02
+Checksums-Sha1:
+ e621a5151198902c9dd8f77de3faac0576219010 5459 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ 39d14b61f14fcf9d05c4f4b932582973d62cd06d 91816 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
+Checksums-Sha256:
+ f9fd74a13a71a8fff69cc41cf43bb99e1e764efc91ea8de4f92c9f141e401a88 5459 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ e40583b4a94fb072fa64966383540ea27a836bda83304126cebcc04778331cd0 91816 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
+Files:
+ ab986cd23e968034d33eadcbabae3bc3 5459 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ 0bf8f026c766e8591f6a1e366a4bfb73 91816 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
