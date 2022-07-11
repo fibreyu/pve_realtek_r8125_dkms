@@ -14,6 +14,7 @@ RESULT=$?
 
 echo "blacklist r8169" >> /etc/modprobe.d/pve-blacklist.conf
 echo "r8125" >> /etc/modules
+modprobe -r r8169
 modprobe r8125
 
 echo "Finished running dkms install steps."
