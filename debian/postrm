@@ -5,4 +5,4 @@ set -e
 sed -i 's/blacklist r8169//g' /etc/modprobe.d/pve-blacklist.conf
 sed -i "s/r8125//g" /etc/modules
 
-update-initramfs -u -k all
+update-initramfs -u
