@@ -15,11 +15,11 @@ Changes:
  .
    * add Realtek r8125b driver version 9.009.02
 Checksums-Sha1:
- d464872790738cbf4c25c786ac6e251377e9d34d 5453 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
- a30fea75d7f9785388fcd9ce6c5bf70389a98047 91800 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
+ 7a16dba9af31ecc83234a042e190b826c01bdfd7 5453 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ 0fee2eb1712ac19f610048514b772f085b327658 91840 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
 Checksums-Sha256:
- 274e96a4a497ec16101f15070589ab510af9a3e797e76918fa444e0f17139ff2 5453 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
- e4cf200637bbcfd49f00b2e50bf0e33906d42e42ecb78967a696eafac56ddab1 91800 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
+ 5a7ce4f3559ad4d71eeeada159aee5202971e4cc245d4b1f1071b297fb69d469 5453 pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ f3ed53bd354ba12f2e104c2c5dfc15b7301e54347b84546cb2e79c8efb3d09b7 91840 pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
 Files:
- 2d0ef43a671cea52cdff9cf448e13641 5453 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
- 2f0acd24fa7b8f8abc7a1a79e705956a 91800 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
+ 001110b4301d3d428a2389a2142a76f4 5453 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.buildinfo
+ 76c53542e0286597337ee221281eaa47 91840 contrib/kernel optional pve-realtek-r8125-dkms_9.009.02-1_amd64.deb
