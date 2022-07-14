@@ -9,7 +9,7 @@ Homepage: https://github.com/fibreyu/pve-realtek-r8125-dkms
 
 Package: pve-realtek-r8125-dkms
 Architecture: any
-Depends: dkms
+Depends: dkms, pve-headers
 Description: Realtek r8125b driver for ProxmoxVE
  This package provides the source code of Realtek r8125b Linux driver 
  for ProxmoxVE with dkms.
