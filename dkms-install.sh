@@ -9,7 +9,7 @@ fi
 
 DRV_DIR="$(pwd)"
 DRV_NAME=r8125
-DRV_VERSION=9.009.02
+DRV_VERSION=9.010.01
 
 # ===========================  remove old version =====================================================
 OLD_DRV_NAME=$(dkms status *r8125* | awk -F ', ' 'NR==1 {print $1}')
